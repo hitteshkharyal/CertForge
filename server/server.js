@@ -23,7 +23,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [process.env.CLIENT_URL, 'http://localhost:5173', 'http://127.0.0.1:5173'].filter(Boolean),
   credentials: true,
 }));
 app.use(express.json({ limit: '50mb' }));
@@ -36,6 +36,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', authRoutes);
 app.use('/api/templates', templateRoutes);
 app.use('/api/certificates', certificateRoutes);
+
+// Root endpoint (so Render doesn't show "Cannot GET /")
+app.get('/', (req, res) => {
+  res.send('🎓 Certificate Generator API is running successfully!');
+});
 
 // Health check
 app.get('/api/health', (req, res) => {

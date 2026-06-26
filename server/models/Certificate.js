@@ -29,8 +29,6 @@ const certificateSchema = new mongoose.Schema({
   timestamps: true,
 });
 
-// Index for verification lookups
-certificateSchema.index({ certificateId: 1 });
 // Index for user's certificates
 certificateSchema.index({ userId: 1, createdAt: -1 });
 
