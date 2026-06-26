@@ -103,6 +103,7 @@ const AuthForm = ({ mode = 'login' }) => {
                     value={form.email}
                     onChange={handleChange}
                     required
+                    autoComplete="username"
                     placeholder="you@example.com"
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-surface-100 placeholder-surface-500 focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 outline-none transition-all text-sm"
                   />
