@@ -1,0 +1,26 @@
+{
+  "name": "certificate-generator-server",
+  "version": "1.0.0",
+  "description": "Backend API for Dynamic Certificate Generator",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.2",
+    "multer": "^2.2.0",
+    "multer-storage-cloudinary": "^4.0.0",
+    "uuid": "^14.0.1"
+  }
+}
